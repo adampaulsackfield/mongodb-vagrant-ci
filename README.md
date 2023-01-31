@@ -3,7 +3,7 @@
 ​
 What did you need to do to provision a vm to run mongo db?
 
-Ensure that Vagrant is setup on your host machine, create a Vagrantfile and configured a server using `starboard/ubuntu-arm64-20.04.5` image. Then I was able to create a [script.sh](https://github.com/adampaulsackfield/vagrant-mongo-node/env/mongodb/script.sh) to automate installing MongoDB.
+Ensure that Vagrant is setup on your host machine, create a Vagrantfile and configured a server using `starboard/ubuntu-arm64-20.04.5` image. Then I was able to create a [script.sh](./env/mongodb/script.sh) to automate installing MongoDB.
 
 What did you need to do to provision a vm to:
 ​
@@ -13,9 +13,9 @@ What did you need to do to provision a vm to:
 - Use apache server to direct traffic to a given port?
 - How are you able to pass in the DB connection string?
   ​
-  Similarly, set up a Vagrantfile to provision a uBuntu server, again using `starboard/ubuntu-arm64-20.04.5` as the base image. Using [script.sh](https://github.com/adampaulsackfield/vagrant-mongo-node/env/nodeapp/script.sh) I was able to automate the installation of _Node_, _NPM_, and _Apache Server_. The script then installed the required dependencies for the App and started the app running. The script was also used to configure the Apache2 server to add an alias so that the site could be accessed using an east to remember Hostname, rather than the IP address (think DNS).
+  Similarly, set up a Vagrantfile to provision a uBuntu server, again using `starboard/ubuntu-arm64-20.04.5` as the base image. Using [script.sh](./env/nodeapp/script.sh) I was able to automate the installation of _Node_, _NPM_, and _Apache Server_. The script then installed the required dependencies for the App and started the app running. The script was also used to configure the Apache2 server to add an alias so that the site could be accessed using an east to remember Hostname, rather than the IP address (think DNS).
 
-  I faced some issues with working with the HOSTS file, due to using VMWare Fusion and the docs not being clear on how to set a static IP, as a result I had to think outside the box and add a script that would run `hostname -I` on the mongodb instance and save the assigned IP address to a global file, which we could then access from the nodeapp and add to a `.env` file in the project, which would be read by the NPM package `dotenv`.
+  I faced some issues with working with the _HOSTS_ file, due to using VMWare Fusion and the docs not being clear on how to set a static IP, as a result I had to think outside the box and add a script that would run `hostname -I` on the mongodb instance and save the assigned IP address to a global file, which we could then access from the nodeapp and add to a `.env` file in the project, which would be read by the NPM package `dotenv`.
 
 ---
 
@@ -41,7 +41,7 @@ What did you need to do to provision a vm to:
 - What does it allow you to do?
   They allow developers to develop in specific environments, such as linux, windows, or MacOS.
 - How have you used one?
-  I have used VMs inside VMWare Fusion, UTM, VirtualBox, and hosted on cloud services like AWS, Digital Ocean, and Azure.
+  I have used VMs inside VMWare Fusion, UTM, VirtualBox, and hosted on cloud services like AWS, Digital Ocean, and Azure. Managed several two-tier applications, with API's, Databases, and client.
   ​
 
 ### Vagrant
